@@ -4,11 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 int code,effectif,codes,capacite;
-char nom[20],niveau[20],position[20],machine[20];
+char nom[20],niveau[20],position[20],machine[20],EDT[50];
 
 
 FILE*fp;
 FILE*fps;
+FILE*fpe;
 void creationclasse(void);
 void affichageclasse(void);
 void modifierclasse(void);
@@ -17,6 +18,7 @@ void creationsalle(void);
 void affichagesalle(void);
 void modifiersalle(void);
 void supprimersalle(void);
+void affichageedt(void);
 
 void creationclasse()
 {
@@ -330,5 +332,22 @@ fas=fopen("fas.txt","wt");
 	printf("la salle est supprimer\n");
 	
 	
+}
+void affichageedt()
+{
+	FILE*fpe;
+	char EDT[50];
+	fpe=fopen("edt.txt","rt");
+	if(fpe==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(EDT,sizeof(EDT),fpe)  !=NULL)
+	{
+		printf("%s",EDT);
+	}
+fclose(fpe);
 }
 #endif

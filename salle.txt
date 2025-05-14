@@ -1,0 +1,28 @@
+5
+ sd
+ 44
+ oui
+6
+ nbatiment
+ 555
+ non
+7
+ nb
+ 555
+ non
+1
+ departement_biologie
+ 100
+ non
+8
+ salle_des_doctaurants
+ 50
+ oui
+9
+ salle_des_doctaurants
+ 555
+ non
+10
+ salle_des_doctaurants
+ 555
+ dd
