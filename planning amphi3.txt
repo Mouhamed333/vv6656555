@@ -1,0 +1,16 @@
+                                                            AMPHI 3
+
+HORAIRES      LUNDI               MARDI               MERCREDI            JEUDI               VENDREDI            SAMEDI
+08H-09H       L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE     L2 INFORMATIQUE                                                        
+09H-10H       L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE     L2 INFORMATIQUE                                                    
+10H-11H       L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE G3
+11H-12H       L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE     L1 INFORMATIQUE G3
+12H-13H 
+13H-14H                                                                
+14H-15H                                               L2 INFORMATIQUE     L2 INFORMATIQUE
+15H-16H       L2 INFORMATIQUE     L2 INFORMATIQUE     L2 INFORMATIQUE     L2 INFORMATIQUE     L2 INFORMATIQUE
+16H-17H       L2 INFORMATIQUE     L2 INFORMATIQUE     L2 INFORMATIQUE     L2 INFORMATIQUE     L2 INFORMATIQUE
+17H-18H                                               L2 INFORMATIQUE
+18H-19H                                                                          
+19H-20H                                                                             
+20H-21H

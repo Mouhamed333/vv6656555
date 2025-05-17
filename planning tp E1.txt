@@ -1,0 +1,16 @@
+                                                            SALLE DE COURS TP E1
+
+HORAIRES      LUNDI               MARDI               MERCREDI            JEUDI               VENDREDI            SAMEDI
+08H-09H       L3 BIOINFORMATIQUE                                          L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE
+09H-10H       L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE                      L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE  M2 BIOINFORMATIQUE
+10H-11H                           L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE  L1 INFORMATIQUE G2  M2 BIOINFORMATIQUE
+11H-12H       L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE  L1 INFORMATIQUE G2  M2 BIOINFORMATIQUE   
+12H-13H       L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE  L3 BIOINFORMATIQUE                      M2 BIOINFORMATIQUE
+13H-14H                                               L3 BIOINFORMATIQUE                                          M2 BIOINFORMATIQUE                               
+14H-15H                                                                                                          
+15H-16H       M2 RETEL                                L1 INFORMATIQUE G1  L1 INFORMATIQUE G2  M2 RETEL
+16H-17H       M2 RETEL                                L1 INFORMATIQUE G1  L1 INFORMATIQUE G2  M2 RETEL
+17H-18H                                                                                       M2 RETEL                     
+18H-19H                                                                                                           
+19H-20H                                                                                                           
+20H-21H                         

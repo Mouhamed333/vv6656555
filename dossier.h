@@ -3,13 +3,28 @@
 #define FONCTION_H_INCLUDED
 #include <stdio.h>
 #include <stdlib.h>
-int code,effectif,codes,capacite;
-char nom[20],niveau[20],position[20],machine[20],EDT[50];
+int code,effectif,codes,capacite,numReservation,codeClasse,codeSalle,duree;
+char nom[20],niveau[20],position[20],machine[20],EDT[50],date[20],heureDebut[10],motif[50],etat[20],planning[20],planningg[20],planninggg[20],planningggg[20],planninggggg[20],planningggggg[20],planninggggggg[20],planningggggggg[20],planninggggggggg[20];
 
 
 FILE*fp;
 FILE*fps;
 FILE*fpe;
+FILE*fpel;
+FILE*fpr;
+FILE*fpelll;
+FILE*fpem1;
+FILE*fpem2retel;
+FILE*fpplanning;
+FILE*fpplanning2;
+FILE*fpplanning3;
+FILE*fpplanning4;
+FILE*fpplanning5;
+FILE*fpplanning6;
+FILE*fpplanning7;
+FILE*fpplanning8;
+FILE*fpplanning9;
+
 void creationclasse(void);
 void affichageclasse(void);
 void modifierclasse(void);
@@ -19,6 +34,21 @@ void affichagesalle(void);
 void modifiersalle(void);
 void supprimersalle(void);
 void affichageedt(void);
+void affichageedtl1(void);
+void affichageedtl3bio(void);
+void affichageedtm1sir(void);
+void affichageedtm2retel(void);
+void creationreservation(void);
+void affichagereservation(void);
+void affichageplanningrc1(void);
+void affichageplanningrc2(void);
+void affichageplanningrc3(void);
+void affichageplanningrc4(void);
+void affichageplanningTPE1(void);
+void affichageplanningTPE2(void);
+void affichageplanningTPE3(void);
+void affichageplanningTP_extension(void);
+void affichageplanningamphi3(void);
 
 void creationclasse()
 {
@@ -350,4 +380,326 @@ void affichageedt()
 	}
 fclose(fpe);
 }
+void affichageedtl1()
+{
+	FILE*fpel;
+	char EDT[50];
+	fpel=fopen("edtl.txt","rt");
+	if(fpel==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(EDT,sizeof(EDT),fpel)  !=NULL)
+	{
+		printf("%s",EDT);
+	}
+fclose(fpel);
+}
+void affichageedtl3bio()
+{
+	FILE*fpelll;
+	char EDT[50];
+	fpelll=fopen("edtl3bio.txt","rt");
+	if(fpelll==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(EDT,sizeof(EDT),fpelll)  !=NULL)
+	{
+		printf("%s",EDT);
+	}
+fclose(fpelll);
+
+}
+void affichageedtm1sir()
+{
+	FILE*fpem1;
+	char EDT[50];
+	fpem1=fopen("edtm1sir.txt","rt");
+	if(fpem1==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(EDT,sizeof(EDT),fpem1)  !=NULL)
+	{
+		printf("%s",EDT);
+	}
+fclose(fpem1);
+
+}
+void affichageedtm2retel()
+{
+	FILE*fpem2retel;
+	char EDT[50];
+	fpem2retel=fopen("edtm2retel.txt","rt");
+	if(fpem2retel==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(EDT,sizeof(EDT),fpem2retel)  !=NULL)
+	{
+		printf("%s",EDT);
+	}
+fclose(fpem2retel);
+
+}
+void creationreservation()
+{
+	int numR,tr=0;
+	fpr=fopen("reservation.txt","a+");
+	if(fpr==NULL)
+	{
+		printf("ce n'est pas possible d'ouvrir le fichier\n");
+		exit(1);
+	}
+	printf("donner le numero de reservation:");
+	scanf("%d",&numR);
+	while(!feof(fpr)){
+		fscanf(fpr,"%d %d %d %s %s %d %s %s",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat);
+		if(numReservation==numR)
+		{
+			tr=1;
+			break;
+		}
+	}	
+	if(tr==1){
+		printf("reservation existe deja!!!\n");
+	}
+	else{
+		printf("donner le code de la classe:");
+		scanf("%d",&codeClasse);
+		printf("donner le code de la salle:");
+		scanf("%d",&codeSalle);
+		printf("donner la date (ex: lundi):");
+		scanf("%s",date);
+		printf("donner l'heure de debut (ex: 08h00):");
+		scanf("%s",heureDebut);
+		printf("donner la duree en minutes:");
+		scanf("%d",&duree);
+		printf("donner le motif:");
+		scanf("%s",motif);
+		printf("donner l'etat (reserve/annule/valide/encours/termine):");
+		scanf("%s",etat);
+		fprintf(fpr,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",numR,codeClasse,codeSalle,date,heureDebut,duree,motif,etat);
+	}
+	fclose(fpr);
+}
+
+void affichagereservation()
+{
+	int numR,tr=0;
+	fpr=fopen("reservation.txt","rt");
+	if(fpr==NULL)
+	{
+		printf("impossible d'ouvrir le fichier\n");
+		exit(1);
+	}	
+	printf("donner le numero de reservation:");
+	scanf("%d",&numR);
+	while(!feof(fpr))
+	{
+		fscanf(fpr,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat);
+		if(numReservation==numR)
+		{
+			tr=1;
+			printf("Code classe: %d\n",codeClasse);
+			printf("Code salle: %d\n",codeSalle);
+			printf("Date: %s\n",date);
+			printf("Heure de debut: %s\n",heureDebut);
+			printf("Duree: %d minutes\n",duree);
+			printf("Motif: %s\n",motif);
+			printf("Etat: %s\n",etat);
+		}
+	}
+	if(tr==0)
+	{
+		printf("la reservation n'existe pas!!!\n");
+	}
+	fclose(fpr);
+}
+
+
+
+
+
+
+
+
+
+
+
+void affichageplanningrc1()
+{
+	FILE*fpplanning;
+	char planning[20];
+	fpplanning=fopen("planning rc1.txt","rt");
+	if(fpplanning==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(planning,sizeof(planning),fpplanning)  !=NULL)
+	{
+		printf("%s",planning);
+	}
+fclose(fpplanning);
+
+}
+void affichageplanningrc2()
+{
+	FILE*fpplanning2;
+	char planningg[20];
+	fpplanning2=fopen("planning rc2.txt","rt");
+	if(fpplanning2==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(planningg,sizeof(planningg),fpplanning2)  !=NULL)
+	{
+		printf("%s",planningg);
+	}
+fclose(fpplanning2);
+
+}
+void affichageplanningrc3()
+{
+	FILE*fpplanning3;
+	char planninggg[20];
+	fpplanning3=fopen("planning rc3.txt","rt");
+	if(fpplanning3==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(planninggg,sizeof(planninggg),fpplanning3)  !=NULL)
+	{
+		printf("%s",planninggg);
+	}
+fclose(fpplanning3);
+
+}
+
+void affichageplanningrc4()
+{
+	FILE*fpplanning4;
+	char planningggg[20];
+	fpplanning4=fopen("planning rc4.txt","rt");
+	if(fpplanning4==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(planningggg,sizeof(planningggg),fpplanning4)  !=NULL)
+	{
+		printf("%s",planningggg);
+	}
+fclose(fpplanning4);
+
+}
+
+void affichageplanningTPE1()
+{
+	FILE*fpplanning5;
+	char planninggggg[20];
+	fpplanning5=fopen("planning tp E1.txt","rt");
+	if(fpplanning5==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(planninggggg,sizeof(planninggggg),fpplanning5)  !=NULL)
+	{
+		printf("%s",planninggggg);
+	}
+fclose(fpplanning5);
+
+}
+void affichageplanningTPE2()
+{
+	FILE*fpplanning6;
+	char planningggggg[20];
+	fpplanning6=fopen("planning tp E2.txt","rt");
+	if(fpplanning6==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(planningggggg,sizeof(planningggggg),fpplanning6)  !=NULL)
+	{
+		printf("%s",planningggggg);
+	}
+fclose(fpplanning6);
+
+}
+void affichageplanningTPE3()
+{
+	FILE*fpplanning7;
+	char planninggggggg[20];
+	fpplanning7=fopen("planning tp E3.txt","rt");
+	if(fpplanning7==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(planninggggggg,sizeof(planninggggggg),fpplanning7)  !=NULL)
+	{
+		printf("%s",planninggggggg);
+	}
+fclose(fpplanning7);
+
+}
+void affichageplanningTP_extension()
+{
+	FILE*fpplanning8;
+	char planningggggggg[20];
+	fpplanning8=fopen("planning TP EXTENSION.txt","rt");
+	if(fpplanning8==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(planningggggggg,sizeof(planningggggggg),fpplanning8)  !=NULL)
+	{
+		printf("%s",planningggggggg);
+	}
+fclose(fpplanning8);
+
+}
+void affichageplanningamphi3()
+{
+	FILE*fpplanning9;
+	char planninggggggggg[20];
+	fpplanning9=fopen("planning amphi3.txt","rt");
+	if(fpplanning9==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(planninggggggggg,sizeof(planninggggggggg),fpplanning9)  !=NULL)
+	{
+		printf("%s",planninggggggggg);
+	}
+fclose(fpplanning9);
+
+}
+
+
 #endif

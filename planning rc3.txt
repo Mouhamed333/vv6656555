@@ -1,0 +1,16 @@
+                                                            SALLE DE COURS RC3
+
+HORAIRES      LUNDI               MARDI               MERCREDI            JEUDI               VENDREDI            SAMEDI
+08H-09H       M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/SOIR
+09H-10H       M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/SOIR
+10H-11H       M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/SOIR
+11H-12H       M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/SOIR
+12H-13H       M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/SOIR
+13H-14H                                                                                       M1 SIR/JOUR
+14H-15H       L1 INFORMATIQUE G4  M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         L1 INFORMATIQUE G4
+15H-16H       L1 INFORMATIQUE G4  M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         L1 INFORMATIQUE G4
+16H-17H                           M1 SIR/JOUR         M1 SIR/JOUR         M1 SIR/JOUR         
+17H-18H       M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR
+18H-19H       M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR
+19H-20H       M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR
+20H-21H       M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR         M1 SIR/SOIR

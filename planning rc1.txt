@@ -1,0 +1,18 @@
+CAD/FST/DM1                           EMPLOIS DU TEMPS DES SALLES DE LA SECTION INFORMATIQUE                              À PARTIR DU 27/03/2023
+
+                                                            SALLE DE COURS RC1
+
+HORAIRES      LUNDI                  MARDI                    MERCREDI               JEUDI                    VENDREDI                SAMEDI
+06H-09H       L1 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE         M2 BIOINFORMATIQUE
+09H-10H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE         M2 BIOINFORMATIQUE
+10H-11H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE         M2 BIOINFORMATIQUE
+11H-12H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE         M2 BIOINFORMATIQUE
+12H-13H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE       
+13H-14H                                                                                                                  
+14H-15H       L1 INFORMATIQUE G3                                                     L1 INFORMATIQUE G1       
+15H-16H       L1 INFORMATIQUE G3    L1 INFORMATIQUE G3        M2 BIOINFORMATIQUE     L1 INFORMATIQUE G1       L1 INFORMATIQUE G2       
+16H-17H       L1 INFORMATIQUE G3    L1 INFORMATIQUE G3        M2 BIOINFORMATIQUE     L1 INFORMATIQUE G1       L1 INFORMATIQUE G2       
+17H-18H                                                                                                                  
+18H-19H                                                                                                                  
+19H-20H                                                                                                                  
+20H-21H                                                                                                                  

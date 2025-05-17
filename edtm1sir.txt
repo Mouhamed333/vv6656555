@@ -1,0 +1,22 @@
+HEURE                          LUNDI                MARDI              MERCREDI               JEUDI                VENDREDI         samedi        
+08H-10H                        JEE               Modelisation des      Modelisation des       Modelisation des     Services Web     Developpement Personnel
+                               8h-11h            Processus Metier      Processus Metier       Processus Metier     9h-12h           9h-12h
+                              (M. NDONG)         8h-10h  (M. BOLY)     8h-10h  (M. BOLY)      9h-10h  (M. BOLY)    (M. DEYE)        (M. DIOP)                                                                                            
+
+
+10H-12H                                          Modeles de            Oracle/Performance     Programmation
+                                                 donnees pour le       11h-13h                python
+                                                 Big Data              (M. SENE)              11h-13h
+                                                 10h-13h                                      (M. SECK)
+                                                 (M. BAME)
+                       
+12H-14H                                           
+                                                   
+
+                                                  Reseaux et           Oracle/Performance                          Developpement
+                                                  Services IP          14h30-17h30                                 mobile                                
+                                                  14h30-17h30          (M. SENE)                                   15h-17h30
+15H-17H                                           (M. SADIO)                                                       (M. FALL)
+                               
+                                                                      
+                                                                  

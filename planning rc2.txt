@@ -1,0 +1,16 @@
+                                                            SALLE DE COURS RC2
+
+HORAIRES      LUNDI               MARDI               MERCREDI            JEUDI               VENDREDI            SAMEDI
+08H-09H       M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            
+09H-10H       M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            
+10H-11H       M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            
+11H-12H       M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            
+12H-13H       M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL            M1 RETEL
+13H-14H                                                                                                           M1 RETEL
+14H-15H                                                                                                           M1 RETEL
+15H-16H       L1 INFORMATIQUE G1                      L3 BIOINFORMATIQUE  M1 RETEL            M2 BIOINFORMATIQUE
+16H-17H       L1 INFORMATIQUE G1                      L3 BIOINFORMATIQUE  M1 RETEL            M2 BIOINFORMATIQUE
+17H-18H                                                                                                           
+18H-19H                                                                                                           
+19H-20H                                                                                                           
+20H-21H                                                                                                           

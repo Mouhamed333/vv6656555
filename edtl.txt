@@ -1,0 +1,21 @@
+HEURE                          LUNDI                MARDI              MERCREDI           JEUDI               VENDREDI              
+08H-10H                        M. SOIDRIDINE        M. BAME            M. DIANE           M. BAME             M. DIANE
+                               systeme              Algorithmique2     programmation 2    Algorithmique2     programmation2
+                               d exploitation       Salle RC4          Salle RC4          Salle rc4           rc4
+                                  
+10H-12H 
+                                M. TOURE            M. MBOW            M. SADIO            M. BARRY 
+                                Analyse 2           physique3          architecture des    Algebre2
+                                Salle RC4           Salle RC4          ordinateur rc4      SAlle rc4
+
+12H-14H
+                                TD/TP                                  M. TOURE 
+                                 Programmation                         TD  Analyse 2 
+                                G1 STP B Ext                           G13  RC4 
+                                13h 15h 
+                                M. GUEYE                                                                    
+
+15H-17H 
+                                M. KEITA           M. BARRY - TD Algebre2  M. TRAORE       M. TOURE
+                                TD Physique 3      G1-3 – RC4              TD Algebre2     TD – Analyse 2
+                                G3-RC4             Mr korea                 G2-4 rc4       G2-4 – RC4 

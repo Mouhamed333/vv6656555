@@ -1,0 +1,16 @@
+                                                            SALLE DE COURS TP E3
+
+HORAIRES      LUNDI               MARDI               MERCREDI            JEUDI               VENDREDI            SAMEDI
+08H-09H                                                                                       M2 SIR/JOUR         M2 SIR/JOUR
+09H-10H       M2 SIR/JOUR         M2 SIR/JOUR         M2 SIR/JOUR         M2 SIR/JOUR         M2 SIR/JOUR         M2 SIR/JOUR
+10H-11H       M2 SIR/JOUR         M2 SIR/JOUR         M2 SIR/JOUR         M2 SIR/JOUR                             M2 SIR/JOUR
+11H-12H       M2 SIR/JOUR         M2 SIR/JOUR         M2 SIR/JOUR         M2 SIR/JOUR                             M2 SIR/JOUR
+12H-13H       M2 SIR/JOUR         M2 SIR/JOUR         M2 SIR/JOUR                                                 M2 SIR/JOUR
+13H-14H                                                                                                           M2 SIR/JOUR
+14H-15H                                                M2 SIR/JOUR        M2 SIR/JOUR          M2 SIR/JOUR        M2 SIR/JOUR
+15H-16H       M2 SIR/JOUR         L3 BIOINFORMATIQUE   M2 SIR/JOUR        M2 SIR/JOUR          M2 SIR/JOUR
+16H-17H       M2 SIR/JOUR         L3 BIOINFORMATIQUE   M2 SIR/JOUR        M2 SIR/JOUR          M2 SIR/JOUR
+17H-18H       M2 SIR/JOUR                              M2 BIOINFORMATIQUE M2 BIOINFORMATIQUE   M2 SIR/JOUR                   
+18H-19H       M2 BIOINFORMATIQUE                       M2 BIOINFORMATIQUE M2 BIOINFORMATIQUE   M2 BIOINFORMATIQUE                                                                       
+19H-20H       M2 BIOINFORMATIQUE                       M2 BIOINFORMATIQUE M2 BIOINFORMATIQUE   M2 BIOINFORMATIQUE                                                                         
+20H-21H       M2 BIOINFORMATIQUE                       M2 BIOINFORMATIQUE M2 BIOINFORMATIQUE   M2 BIOINFORMATIQUE
