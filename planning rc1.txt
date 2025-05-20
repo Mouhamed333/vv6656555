@@ -2,11 +2,11 @@ CAD/FST/DM1                           EMPLOIS DU TEMPS DES SALLES DE LA SECTION 
 
                                                             SALLE DE COURS RC1
 
-HORAIRES      LUNDI                  MARDI                    MERCREDI               JEUDI                    VENDREDI                SAMEDI
-06H-09H       L1 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE         M2 BIOINFORMATIQUE
-09H-10H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE         M2 BIOINFORMATIQUE
-10H-11H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE         M2 BIOINFORMATIQUE
-11H-12H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE         M2 BIOINFORMATIQUE
+HORAIRES      LUNDI                  MARDI                    MERCREDI               JEUDI                    VENDREDI            SAMEDI
+06H-09H       L1 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE      M2 BIOINFORMATIQUE
+09H-10H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE      M2 BIOINFORMATIQUE
+10H-11H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE      M2 BIOINFORMATIQUE
+11H-12H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE      M2 BIOINFORMATIQUE
 12H-13H       L3 INFORMATIQUE        L3 INFORMATIQUE          L3 INFORMATIQUE        L3 INFORMATIQUE         L3 INFORMATIQUE       
 13H-14H                                                                                                                  
 14H-15H       L1 INFORMATIQUE G3                                                     L1 INFORMATIQUE G1       

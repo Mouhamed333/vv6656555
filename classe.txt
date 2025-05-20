@@ -1,8 +1,44 @@
-45
- rc4
- nb
- 450
+1
+ l1_informatique
+ licence
+ 103
+2
+ l2_informatique
+ licence
+ 80
+3
+ l3_informatique
+ licence
+ 60
+4
+ l3_biomath_bioinformatique
+ licence
+ 72
+5
+ M1_sir_jour_soir
+ master
+ 40
+6
+ M1_retel_jour_soir
+ master
+ 80
+7
+ M1_biomath_bioinformatique
+ master
+ 150
 8
- rc7
- kd
- 540
+ systeme-d-information-repartie_jour_soir
+ master
+ 69
+9
+ M2_biomath_bioinformatique
+ master
+ 48
+10
+ RETEL
+ master
+ 115
+11
+ BI
+ master
+ 64

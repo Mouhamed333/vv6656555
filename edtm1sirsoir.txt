@@ -1,0 +1,11 @@
+LUNDI                 MARDI                        MERCREDI               JEUDI                   VENDREDI               SAMEDI
+
+Modelisation          Architecture SOA             DBA Oracle             Services Web            Developpement         Developpement
+Processus Metier      et micro-services                                                           mobile                Personnel
+17h30-20h30           17h30-20h30                  17h30-20h30            17h30-20h30             17h30-20h30           9h-12h
+(M. BOLY)             (M. TOURE)                   (M. SENE)              (M. DEYE)               (M. FALL)             (M. DIOP)
+
+                                                                                                                      Programmation
+                                                                                                                      Python
+                                                                                                                      12h-15h
+                                                                                                                      (M. SECK)

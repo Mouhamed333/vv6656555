@@ -24,9 +24,13 @@ void clear_screen() {
 		printf("7-modifiersalle\n");
 		printf("8-supprimersalle\n");
 		printf("9-afficher emploi du temps\n");
-		printf("10-creer reservation\n");
-		printf("11-afficher reservation\n");
-		printf("12-afficher les plannings des salles\n");
+		printf("10-afficher planning\n");
+		printf("11-creer reservation\n");
+		printf("12-afficher une reservation\n");
+		printf("13-rechercher reservations par classe\n");
+		printf("14-rechercher reservations par salle\n");
+		printf("15-modifier l'etat d'une reservation\n");
+		printf("16-supprimer une reservation\n");
 		printf("0-fin de traitement\n\n");
 		printf("votre choix:");
 		scanf("%d",&choix);
@@ -59,30 +63,28 @@ void clear_screen() {
 			    
 			case 9:
                 printf("\n*** Affichage emploi du temps ***\n");
-                printf("1 - Emploi du temps l2\n");
-                printf("2 - Emploi du temps master1 sir\n");
-                printf("3- Emploi du temps master2 retel\n");
-                printf("4 - Emploi du temps l1\n");
-                printf("5 - Emploi du temps l3 bio?\n");
-                printf("6 - Emploi du temps l?\n");
-                printf("7 - Emploi du temps l?\n");
-                printf("8 - Emploi du temps l?\n");
+				printf("1 - Emploi du temps l1\n");
+                printf("2 - Emploi du temps l2\n");
+			    printf("3 - Emploi du temps l3 bio\n");
+                printf("4 - Emploi du temps master1 sir\n");
+				printf("5 - Emploi du temps master 1 soir\n");
+			    printf("6 - Emploi du temps master 1 retel\n");
+                printf("7- Emploi du temps master2 retel\n");
                 printf("Votre choix : ");
                 scanf("%d", &choix0);
                 switch (choix0) {
-                    case 1: affichageedt(); break;
-                    case 2: affichageedtm1sir() ; break;
-                    case 3: affichageedtm2retel(); break;
-                    case 4:affichageedtl1()  ; break;
-                    case 5:affichageedtl3bio() ; break;
-                    case 6:               ; break;
-                    case 7:               ; break;
+				    case 1:affichageedtl1()  ; break;
+                    case 2: affichageedt(); break;
+					case 3:affichageedtl3bio() ; break;
+                    case 4: affichageedtm1sir() ; break;
+					case 5:affichageedtm1sirsoir() ; break;
+					case 6:affichageedtm1retel()  ; break;
+                    case 7: affichageedtm2retel(); break;
                     default: printf("Choix invalide pour l'emploi du temps.\n");
                 }
                 break;
-                case 10: creationreservation() ; break;
-                case 11: affichagereservation() ; break;
-				case 12: 
+                
+				case 10: 
 				printf("\n*** Affichage planning des salles ***\n");
                 printf("1 - planning RC1\n");
 				printf("2 - planning RC2\n");
@@ -106,10 +108,15 @@ void clear_screen() {
                     case 8:affichageplanningTP_extension() ; break;
                     case 9:affichageplanningamphi3() ; break;
                     default: printf("Choix invalide pour le planning des salles.\n");}break;
-				case 0: printf("fin du traitement\n")
-					;break;
+				case 11: creationreservation() ; break;
+                case 12: affichagereservation() ; break;
+				case 13: recherchereservationclasse(); break;
+				case 14: recherchereservationsalle(); break;
+				case 15: modifieretatreservation(); break;
+				case 16:  supprimerreservation(); break;
+				case 0: printf("fin du traitement\n"); break;
 				 
-				 default: printf("choix erroné !!!! le choix entre 0 et 8");
+				 default: printf("choix erroné !!!! le choix entre 0 et 16");
 				 
 			 }
 			  getchar(); getchar();

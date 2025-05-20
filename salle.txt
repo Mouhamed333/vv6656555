@@ -1,28 +1,36 @@
 5
- sd
- 44
- oui
+ nouveau_batiment
+ 60
+ non
 6
- nbatiment
- 555
+ nouveau_batiment
+ 56
  non
 7
- nb
- 555
+ nouveau_batiment
+ 40
  non
 1
  departement_biologie
- 100
+ 108
  non
 8
  salle_des_doctaurants
- 50
+ 40
  oui
 9
- salle_des_doctaurants
- 555
- non
+ salle_des_doctaurats
+ 44
+ oui
 10
- salle_des_doctaurants
- 555
- dd
+ salle_des_doctaurats
+ 32
+ oui
+11
+ batiment_central
+ 200
+ non
+12
+ BE
+ 30
+ oui

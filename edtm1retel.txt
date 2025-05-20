@@ -1,0 +1,18 @@
+           Lundi            Mardi               Mercredi            Jeudi               Vendredi             Samedi
+
+8h-10h     IoT              Developpement       Reseaux             Anglais             Scripts et           -
+                            mobile              informatiques                            Automatisation
+
+           M. SADIO         M. TOURE            M. NIANG            M. SENE             M. NDIAYE            -
+
+10h-13h    Développement    Scripts et          Bases de donnees    Probabilites et     Reseaux              Administration
+           web              Automatisation      avancees            Statistiques        informatiques        systeme Windows
+
+           M. THIONGANE     M. NDIAYE           M. BOLY             M. SAGNA            M. NIANG             M. DIENG
+
+14h30-     Machine          Developpement       -                   Developpement       -
+16h30 ou   Learning         personnel et                            web
+15h00-                     Employabilité
+17h00/18h00
+
+           M. SADIO         M. DIOP                                  M. THIONGANE

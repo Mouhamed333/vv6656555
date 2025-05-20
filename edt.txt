@@ -1,8 +1,21 @@
-heure	lundi	mardi	mercredi	jeudi	vendredi
-	samedi
-08H-13H	08H-10	08H-10	08H-11H JAVA M. NDONG	08H-10	08H-11H JAVA M. NDONG	09H-13H Prog mobile M. FALL
-	10H-13H Développement personnel M. L NDONG	10H-13H Technologies XML M. DEYE	
+HEURE                          LUNDI                MARDI              MERCREDI           JEUDI               VENDREDI     SAMEDI          
+08H-10H                        Anglais              Base de la                            Methodes            Anglais
+                               MR SAMBA             securite                              Numerique           MR SAMBA     Base de la
+                                                    M. Malaw NDIAYE                       M. DIAKHATE                      securite
+                                                                                                                           M. Malaw NDIAYE
+10H-12H                        Conception des SI    Methodes                              Langages de                      9h-11h
+                               MR GUEYE             Numerique                             scripts                          Réseaux Sans Fil
+                                                    M. DIAKHATE                           M. Malaw NDIAYE                  M. Moustapha Ndiaye
+                                                                                                                            11h-13h
 
-11H-13H Tech WEB (Front-end) M. B. TOURE	10H-13H Développement personnel M. L NDONG	11h-13h Admin Systèmes M. KASSE	
-						
-15H-17H	15H-17H	15H-17H Tech WEB (Back-end) M. N. BAME	15H-17H	15H-17H Admin Systèmes M. KASSE	15H-17H	
+12H-14H
+                               
+                               
+15h-16h                        Langages de                                                Conception des         
+                               scripts                                                    SI
+                               M. Malaw NDIAYE                                            MR GUEYE                      
+                               15h-18h
+15H-17H 
+                                
+                                
+                             
