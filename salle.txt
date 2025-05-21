@@ -14,23 +14,27 @@
  departement_biologie
  108
  non
-8
- salle_des_doctaurants
- 40
- oui
-9
- salle_des_doctaurats
- 44
- oui
-10
- salle_des_doctaurats
- 32
- oui
-11
- batiment_central
- 200
- non
 12
  BE
  30
+ oui
+8
+ premiere_etage
+ 40
+ no
+9
+ premiere_etage
+ 44
+ oui
+10
+ premiere_etage
+ 32
+ non
+11
+ premiere_etage
+ 0
+ no
+13
+ batiment_extension
+ 0
  oui

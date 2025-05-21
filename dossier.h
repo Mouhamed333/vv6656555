@@ -5,11 +5,13 @@
 #include <string.h>
 
 int code,effectif,codes,capacite,numReservation,codeClasse,codeSalle,duree;
-char nom[20],niveau[20],position[20],machine[20],EDT[50],date[20],heureDebut[10],motif[50],etat[20],planning[20],planningg[20],planninggg[20],planningggg[20],planninggggg[20],planningggggg[20],planninggggggg[20],planningggggggg[20],planninggggggggg[20];
+char nom[20],niveau[20],position[20],machine[20],EDT[50],classe[50],salle[50],date[20],heureDebut[10],motif[50],etat[20],planning[20],planningg[20],planninggg[20],planningggg[20],planninggggg[20],planningggggg[20],planninggggggg[20],planningggggggg[20],planninggggggggg[20];
 
 
 FILE*fp;
 FILE*fps;
+FILE*fpfsalle;
+FILE*fpfclasse;
 FILE*fpe;
 FILE*fpel;
 FILE*fpr;
@@ -33,6 +35,7 @@ void affichageclasse(void);
 void modifierclasse(void);
 void supprimerclasse(void);
 void creationsalle(void);
+void affichagelisteclasse(void);
 void affichagesalle(void);
 void modifiersalle(void);
 void supprimersalle(void);
@@ -59,6 +62,7 @@ void recherchereservationclasse(void);
 void recherchereservationsalle(void);
 void modifieretatreservation(void);
 void supprimerreservation(void);
+void affichagelistesalles(void);
 
 
 void creationclasse()
@@ -96,6 +100,24 @@ void creationclasse()
 	}
 	fclose(fp);
 }
+void affichagelisteclasse()
+{
+	FILE*fpfclasse;
+	char classe[50];
+	fpfclasse=fopen("listeclasse.txt","rt");
+	if(fpfclasse==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(classe,sizeof(classe),fpfclasse)  !=NULL)
+	{
+		printf("%s",classe);
+	}
+fclose(fpfclasse);
+}
+
 void affichageclasse()
 {
 int codeR,tr=0;
@@ -249,6 +271,23 @@ void creationsalle()
 		fprintf(fps,"%d\n %s\n %d\n %s\n",codeR,position,capacite,machine);
 	}
 	fclose(fps);
+}
+void affichagelistesalles()
+{
+	FILE*fpfsalle;
+	char salle[50];
+	fpfsalle=fopen("listesalle.txt","rt");
+	if(fpfsalle==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(salle,sizeof(salle),fpfsalle)  !=NULL)
+	{
+		printf("%s",salle);
+	}
+fclose(fpfsalle);
 }
 
 void affichagesalle()
@@ -533,7 +572,7 @@ void creationreservation()
 		scanf("%s",date);
 		printf("donner l'heure de debut (ex: 08h00):");
 		scanf("%s",heureDebut);
-		printf("donner la duree en minutes:");
+		printf("donner la duree en heure:");
 		scanf("%d",&duree);
 		printf("donner le motif:");
 		scanf("%s",motif);
@@ -565,7 +604,7 @@ void affichagereservation()
 			printf("Code salle: %d\n",codeSalle);
 			printf("Date: %s\n",date);
 			printf("Heure de debut: %s\n",heureDebut);
-			printf("Duree: %d minutes\n",duree);
+			printf("Duree: %d heure\n",duree);
 			printf("Motif: %s\n",motif);
 			printf("Etat: %s\n",etat);
 		}
@@ -596,7 +635,7 @@ void recherchereservationclasse()
 			printf("Code salle: %d\n",codeSalle);
 			printf("Date: %s\n",date);
 			printf("Heure de debut: %s\n",heureDebut);
-			printf("Duree: %d minutes\n",duree);
+			printf("Duree: %d heure\n",duree);
 			printf("Motif: %s\n",motif);
 			printf("Etat: %s\n",etat);
 
@@ -629,7 +668,7 @@ void recherchereservationsalle()
 			printf("Code classe: %d\n",codeClasse);
 			printf("Date: %s\n",date);
 			printf("Heure de debut: %s\n",heureDebut);
-			printf("Duree: %d minutes\n",duree);
+			printf("Duree: %d heure\n",duree);
 			printf("Motif: %s\n",motif);
 			printf("Etat: %s\n",etat);
 		}

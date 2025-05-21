@@ -1,0 +1,13 @@
+liste des salles
+rc1
+rc2
+rc3
+rc4
+TPE1
+TPE2
+TPE3
+STP_EXT
+AMPHI3
+SALLE DES DOCTORATS
+
+
