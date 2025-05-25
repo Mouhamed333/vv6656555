@@ -31,8 +31,10 @@ void clear_screen() {
 		printf("14-rechercher reservations par salle\n");
 		printf("15-modifier l'etat d'une reservation\n");
 		printf("16-supprimer une reservation\n");
-		printf("17-afficherlistesalle\n");
-		printf("18-afficherlisteclasse\n");
+		printf("17-afficher liste salle\n");
+		printf("18-afficher liste classe\n");
+		printf("19-afficher liste des reservation\n");
+		printf("20-affichage de la salle la plus utiliser\n");
 		printf("0-fin de traitement\n\n");
 		printf("votre choix:");
 		scanf("%d",&choix);
@@ -115,12 +117,14 @@ void clear_screen() {
 				case 13: recherchereservationclasse(); break;
 				case 14: recherchereservationsalle(); break;
 				case 15: modifieretatreservation(); break;
-				case 16:  supprimerreservation(); break;
+				case 16: supprimerreservation(); break;
 				case 17:affichagelistesalles();break;
 				case 18:affichagelisteclasse();break;
+				case 19:affichagelistereservation();break;
+				case 20:affichersallesplusreservees() ;break;
 				case 0: printf("fin du traitement\n"); break;
 				 
-				 default: printf("choix erroné !!!! le choix entre 0 et 16");
+				 default: printf("choix erroné !!!! le choix entre 0 et 20");
 				 
 			 }
 			  getchar(); getchar();

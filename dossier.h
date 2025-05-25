@@ -5,7 +5,7 @@
 #include <string.h>
 
 int code,effectif,codes,capacite,numReservation,codeClasse,codeSalle,duree;
-char nom[20],niveau[20],position[20],machine[20],EDT[50],classe[50],salle[50],date[20],heureDebut[10],motif[50],etat[20],planning[20],planningg[20],planninggg[20],planningggg[20],planninggggg[20],planningggggg[20],planninggggggg[20],planningggggggg[20],planninggggggggg[20];
+char nom[20],niveau[20],position[20],machine[20],EDT[50],reservation[50],classe[50],salle[50],date[20],heureDebut[10],motif[50],etat[20],planning[20],planningg[20],planninggg[20],planningggg[20],planninggggg[20],planningggggg[20],planninggggggg[20],planningggggggg[20],planninggggggggg[20];
 
 
 FILE*fp;
@@ -62,7 +62,9 @@ void recherchereservationclasse(void);
 void recherchereservationsalle(void);
 void modifieretatreservation(void);
 void supprimerreservation(void);
+void affichersallesplusreservees(void);
 void affichagelistesalles(void);
+void affichagelistereservation(void);
 
 
 void creationclasse()
@@ -553,7 +555,7 @@ void creationreservation()
 	printf("donner le numero de reservation:");
 	scanf("%d",&numR);
 	while(!feof(fpr)){
-		fscanf(fpr,"%d %d %d %s %s %d %s %s",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat);
+		fscanf(fpr," numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat);
 		if(numReservation==numR)
 		{
 			tr=1;
@@ -578,9 +580,26 @@ void creationreservation()
 		scanf("%s",motif);
 		printf("donner l'etat (reserve/annule/valide/encours/termine):");
 		scanf("%s",etat);
-		fprintf(fpr,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",numR,codeClasse,codeSalle,date,heureDebut,duree,motif,etat);
+		fprintf(fpr,"\n numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",numR,codeClasse,codeSalle,date,heureDebut,duree,motif,etat);
 	}
 	fclose(fpr);
+}
+void affichagelistereservation()
+{
+	FILE*fpr;
+	char reservation[50];
+	fpr=fopen("reservation.txt","rt");
+	if(fpr==NULL)
+	 {
+    	printf("impossible d'ouvrir le fichier\n");
+    	exit(1);
+	
+	}	
+	while(fgets(reservation,sizeof(reservation),fpr)  !=NULL)
+	{
+		printf("%s",reservation);
+	}
+fclose(fpr);
 }
 
 void affichagereservation()
@@ -596,7 +615,7 @@ void affichagereservation()
 	scanf("%d",&numR);
 	while(!feof(fpr))
 	{
-		fscanf(fpr,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat);
+		fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat);
 		if(numReservation==numR)
 		{
 			tr=1;
@@ -626,7 +645,7 @@ void recherchereservationclasse()
 	}
 	printf("donner le code de la classe:");
 	scanf("%d",&codeR);
-	while(fscanf(fpr,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat) != EOF)
+	while(fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat) != EOF)
 	{
 		if(codeClasse==codeR && (strcmp(etat,"valide")==0 || strcmp(etat,"encours")==0))
 		{
@@ -659,7 +678,7 @@ void recherchereservationsalle()
 	}
 	printf("donner le code de la salle:");
 	scanf("%d",&codeR);
-	while(fscanf(fpr,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat) != EOF)
+	while(fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat) != EOF)
 	{
 		if(codeSalle==codeR && (strcmp(etat,"valide")==0 || strcmp(etat,"encours")==0))
 		{
@@ -698,7 +717,7 @@ void modifieretatreservation()
 	}
 	printf("donner le numero de la reservation a modifier:");
 	scanf("%d",&numR);
-	while(fscanf(fpr,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat) != EOF)
+	while(fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat) != EOF)
 	{
 		if(numReservation==numR)
 		{
@@ -706,7 +725,7 @@ void modifieretatreservation()
 			printf("donner le nouvel etat (reserve/annule/valide/encours/termine):");
 			scanf("%s",etat);
 		}
-		fprintf(fa,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",numReservation,codeClasse,codeSalle,date,heureDebut,duree,motif,etat);
+		fprintf(fa,"numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",numReservation,codeClasse,codeSalle,date,heureDebut,duree,motif,etat);
 	}
 	fclose(fpr);
 	fclose(fa);
@@ -736,10 +755,10 @@ void supprimerreservation()
 	}
 	printf("donner le numero de la reservation a supprimer:");
 	scanf("%d",&numR);
-	while(fscanf(fpr,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat) != EOF)
+	while(fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,date,heureDebut,&duree,motif,etat) != EOF)
 	{
 		if(numReservation!=numR)
-			fprintf(fa,"%d\n %d\n %d\n %s\n %s\n %d\n %s\n %s\n",numReservation,codeClasse,codeSalle,date,heureDebut,duree,motif,etat);
+			fprintf(fa,"numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",numReservation,codeClasse,codeSalle,date,heureDebut,duree,motif,etat);
 		else
 			tr=1;
 	}
@@ -754,15 +773,63 @@ void supprimerreservation()
 }
 
 
+void affichersallesplusreservees()
+{
+    int codesSalles[100];   
+    int compteurs[100];     
+    int nbSalles = 0;       
+    int i, j, trouve;
 
+    fpr = fopen("reservation.txt", "rt");
+    if (fpr == NULL) {
+        printf("Impossible d'ouvrir le fichier\n");
+        exit(1);
+    }
 
+    while (fscanf(fpr, "numero reservation:%d\n code classe:%d\n code salle:%d\n date:%s\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",
+                  &numReservation, &codeClasse, &codeSalle, date,
+                  heureDebut, &duree, motif, etat) != EOF) {
 
+        if (strcmp(etat, "valide") == 0 || strcmp(etat, "encours") == 0) {
+            trouve = 0;
+            for (i = 0; i < nbSalles; i++) {
+                if (codesSalles[i] == codeSalle) {
+                    compteurs[i]++;
+                    trouve = 1;
+                    break;
+                }
+            }
+            if (!trouve) {
+                codesSalles[nbSalles] = codeSalle;
+                compteurs[nbSalles] = 1;
+                nbSalles++;
+            }
+        }
+    }
+    fclose(fpr);
+    int tempCode, tempCompteur;
+    for (i = 0; i < nbSalles - 1; i++) {
+        for (j = i + 1; j < nbSalles; j++) {
+            if (compteurs[j] > compteurs[i]) {
+                tempCode = codesSalles[i];
+                tempCompteur = compteurs[i];
+                codesSalles[i] = codesSalles[j];
+                compteurs[i] = compteurs[j];
+                codesSalles[j] = tempCode;
+                compteurs[j] = tempCompteur;
+            }
+        }
+    }
 
-
-
-
-
-
+    printf("Salles les plus reservees\n");
+    if (nbSalles == 0) {
+        printf("Aucune reservation trouvee.\n");
+    } else {
+        for (i = 0; i < nbSalles; i++) {
+            printf("Salle %d : %d reservation(s)\n", codesSalles[i], compteurs[i]);
+        }
+    }
+}
 void affichageplanningrc1()
 {
 	FILE*fpplanning;
