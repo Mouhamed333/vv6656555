@@ -1,9 +1,5 @@
 5
  nouveau_batiment
- 60
- non
-6
- nouveau_batiment
  56
  non
 7

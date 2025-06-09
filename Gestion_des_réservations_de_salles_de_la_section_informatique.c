@@ -41,31 +41,15 @@ void clear_screen() {
 		
 		     switch(choix)
 		     {
-		     	case 1:creationclasse()
-					;break;
-				 
-				case 2: affichageclasse()
-					;break;
-				 
-				case 3:modifierclasse()
-					;break;
-				 
-				case 4:supprimerclasse()
-					;break;
-					
-				case 5:creationsalle()
-					;break;
-					
-				case 6: affichagesalle()
-					;break;
-					
-				case 7:modifiersalle()
-					;break;
-					
-				case 8:supprimersalle()
-					;break;
-			    
-			case 9:
+		     	case 1:creationclasse();break;				 
+				case 2: affichageclasse();break;				 
+				case 3:modifierclasse();break;				 
+				case 4:supprimerclasse();break;					
+				case 5:creationsalle();break;					
+				case 6: affichagesalle();break;					
+				case 7:modifiersalle();break;					
+				case 8:supprimersalle();break;			    
+			    case 9:
                 printf("\n*** Affichage emploi du temps ***\n");
 				printf("1 - Emploi du temps l1\n");
                 printf("2 - Emploi du temps l2\n");
