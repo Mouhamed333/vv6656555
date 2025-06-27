@@ -28,9 +28,13 @@
  non
 11
  premiere_etage
- 0
+ 44
  no
 13
  batiment_extension
- 0
+ 55
  oui
+100
+ qd
+ 55
+ q

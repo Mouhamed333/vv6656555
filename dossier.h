@@ -66,40 +66,71 @@ void supprimerreservation(void);
 void affichersallesplusreservees(void);
 void affichagelistesalles(void);
 void affichagelistereservation(void);
+void supprimerReservationsClasse(int codeClasseSupprime);
+void supprimerReservationsSalle(int codeSalleSupprime);
 
+int demanderEffectif() {
+    int effectif, ok;
+    do {
+        printf("Donner l effectif : ");
+        ok = scanf("%d", &effectif);
+        if (ok != 1 || effectif <= 0) {
+            printf("Erreur : veuillez entrer un nombre entier positif !\n");
+            scanf("%s");
+        }
+    } while (ok != 1 || effectif <= 0);
+    return effectif;
+}
+
+int demanderCapacite() {
+    int capacite, ok;
+    do {
+        printf("Donner sa capacite : ");
+        ok = scanf("%d", &capacite);
+        if (ok != 1 || capacite <= 0) {
+            printf("Erreur : veuillez entrer un nombre entier positif !\n");
+            scanf("%s");
+        }
+    } while (ok != 1 || capacite <= 0);
+    return capacite;
+}
 
 void creationclasse()
 {
-	int codeR,tr=0;
-	fp=fopen("classe.txt","a+");
-	if(fp==NULL)
+	int codeR, tr = 0, ok;
+	fp = fopen("classe.txt", "a+");
+	if (fp == NULL)
 	{
-		printf("ce n'est pas possible d'ouvrir le fichier\n");
+		printf("Impossible d ouvrir le fichier\n");
 		exit(1);
 	}
-	printf("donner le code:");
-	scanf("%d",&codeR);
-	while(!feof(fp)){
-
-	fscanf(fp,"%d %s %s %d",&code,nom,niveau,&effectif);
-	if(code==codeR)
-	{
-		tr=1;
-		break;
+	do {
+		printf("Donner le code : ");
+		ok = scanf("%d", &codeR);
+		if (ok != 1 || codeR <= 0) {
+			printf("Erreur : veuillez entrer un nombre entier positif !\n");
+			scanf("%s");
+		}
+	} while (ok != 1 || codeR <= 0);
+	rewind(fp);
+	while (fscanf(fp, "%d\n %s\n %s\n %d\n", &code, nom, niveau, &effectif) == 4) {
+		if (code == codeR) {
+			tr = 1;
+			break;
+		}
 	}
-	}	
-	if(tr==1){
-		printf("classe existe deja!!!\n");
-		
+	if (tr == 1) {
+		printf("Classe existe deja !\n");
+		fclose(fp);
+		return;
 	}
-	else{
-	    printf("donner le nom:");
-		scanf("%s",nom)	;
-		printf("donner le niveau:");
-		scanf("%s",niveau)	;
-		printf("donner l effectif:");
-		scanf("%d",&effectif)	;
-		fprintf(fp,"%d\n %s\n %s\n %d\n",codeR,nom,niveau,effectif);
+	else {
+		printf("Donner le nom : ");
+		scanf("%s", nom);
+		printf("Donner le niveau : ");
+		scanf("%s", niveau);
+		effectif = demanderEffectif();
+		fprintf(fp, "%d\n %s\n %s\n %d\n", codeR, nom, niveau, effectif);
 	}
 	fclose(fp);
 }
@@ -110,7 +141,7 @@ void affichagelisteclasse()
 	fpfclasse=fopen("listeclasse.txt","rt");
 	if(fpfclasse==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -127,11 +158,11 @@ int codeR,tr=0;
 fp=fopen("classe.txt","rt");
     if(fp==NULL)
     {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
-	printf("donner le code:");
+	printf("Donner le code:");
 	scanf("%d",&codeR);
 	while(!feof(fp))
 	{
@@ -146,7 +177,7 @@ fp=fopen("classe.txt","rt");
 	}
 	if(tr==0)
 	{
-		printf("la classe n'existe pas!!!\n");
+		printf("La classe n existe pas !\n");
 	}
 	
 	fclose(fp);
@@ -159,25 +190,25 @@ FILE*fa,*fp;
 fp=fopen("classe.txt","rt");
     if(fp==NULL)
     {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
 fa=fopen("fa.txt","wt");
 	if(fa==NULL)
     {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
-    printf("donner le code de la classe a modifier:");
+    printf("Donner le code de la classe a modifier:");
     scanf("%d",&codeR);
     while(fscanf(fp,"%d\n %s\n %s\n %d\n",&code,nom,niveau,&effectif)==4)
     {
     	if(code==codeR){
 	
     	tr=1;
-    	printf("donner le nouveau nom:");
+    	printf("Donner le nouveau nom:");
     	scanf("%s",nom);
 		}
 	
@@ -190,33 +221,33 @@ fa=fopen("fa.txt","wt");
 	remove("classe.txt");
 	rename("fa.txt","classe.txt");
 	if(tr==0)
-	printf("la classe n'existe pas\n");
+	printf("La classe n existe pas\n");
 	else
-	printf("la classe est modifier\n");
+	printf("La classe est modifier\n");
 	
 	
 }
 void supprimerclasse()
 {
-int codeR, tr = 0;
-int code, effectif;
-char nom[50], niveau[50]; 
-FILE*fa,*fp;
-fp=fopen("classe.txt","rt");
+	int codeR, tr = 0;
+	int code, effectif;
+	char nom[50], niveau[50]; 
+	FILE*fa,*fp;
+	fp=fopen("classe.txt","rt");
     if(fp==NULL)
     {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
-fa=fopen("fa.txt","wt");
+	fa=fopen("fa.txt","wt");
 	if(fa==NULL)
     {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
-    printf("donner le code de la classe a supprimer:");
+    printf("Donner le code de la classe a supprimer:");
     scanf("%d",&codeR);
     while(fscanf(fp,"%d\n %s\n %s\n %d\n",&code,nom,niveau,&effectif)==4)
     {
@@ -232,9 +263,12 @@ fa=fopen("fa.txt","wt");
 	remove("classe.txt");
 	rename("fa.txt","classe.txt");
 	if(tr==0)
-	printf("la classe n existe pas\n");
+	printf("La classe n existe pas\n");
 	else
-	printf("la classe est supprimer\n");
+	{
+		printf("La classe est supprimer\n");
+		supprimerReservationsClasse(codeR);
+	}
 	
 	
 }
@@ -242,36 +276,40 @@ fa=fopen("fa.txt","wt");
 
 void creationsalle()
 {
-	int codeR,tr=0;
-	fps=fopen("salle.txt","a+");
-	if(fps==NULL)
+	int codeR, tr = 0, ok;
+	fps = fopen("salle.txt", "a+");
+	if (fps == NULL)
 	{
-		printf("ce n'est pas possible d'ouvrir le fichier\n");
+		printf("Impossible d ouvrir le fichier\n");
 		exit(1);
 	}
-	printf("donner le code:");
-	scanf("%d",&codeR);
-	while(!feof(fps)){
-
-	fscanf(fps,"%d %s %d %s",&codes,position,&capacite,machine);
-	if(codes==codeR)
-	{
-		tr=1;
-		break;
+	do {
+		printf("Donner le code : ");
+		ok = scanf("%d", &codeR);
+		if (ok != 1 || codeR <= 0) {
+			printf("Erreur : veuillez entrer un nombre entier positif !\n");
+			scanf("%s");
+		}
+	} while (ok != 1 || codeR <= 0);
+	rewind(fps);
+	while (fscanf(fps, "%d %s %d %s", &codes, position, &capacite, machine) == 4) {
+		if (codes == codeR) {
+			tr = 1;
+			break;
+		}
 	}
-	}	
-	if(tr==1){
-		printf("salle existe deja!!!\n");
-		
+	if (tr == 1) {
+		printf("Salle existe deja!!!\n");
+		fclose(fps);
+		return;
 	}
-	else{
-	    printf("donner sa position:");
-		scanf("%s",position)	;
-		printf("donner sa capacite:");
-		scanf("%d",&capacite)	;
-		printf("donner la disponibilite ou non des machines:");
-		scanf("%s",machine)	;
-		fprintf(fps,"%d\n %s\n %d\n %s\n",codeR,position,capacite,machine);
+	else {
+		printf("Donner sa position : ");
+		scanf("%s", position);
+		capacite = demanderCapacite();
+		printf("Donner la disponibilite ou non des machines : ");
+		scanf("%s", machine);
+		fprintf(fps, "%d\n %s\n %d\n %s\n", codeR, position, capacite, machine);
 	}
 	fclose(fps);
 }
@@ -282,7 +320,7 @@ void affichagelistesalles()
 	fpfsalle=fopen("listesalle.txt","rt");
 	if(fpfsalle==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d'ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -299,11 +337,11 @@ int codeR,tr=0;
 fps=fopen("salle.txt","rt");
     if(fps==NULL)
     {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d'ouvrir le fichier\n");
     	exit(1);
 	
 	}	
-	printf("donner le code:");
+	printf("Donner le code:");
 	scanf("%d",&codeR);
 	while(fscanf(fps,"%d %s %d %s",&codes,position,&capacite,machine)==4)
 	{
@@ -317,7 +355,7 @@ fps=fopen("salle.txt","rt");
 	}
 	if(tr==0)
 	{
-		printf("la salle n'existe pas!!!\n");
+		printf("La salle n existe pas!!!\n");
 	}
 	
 	fclose(fps);
@@ -331,29 +369,28 @@ FILE*fas,*fps;
 fps=fopen("salle.txt","rt");
     if(fps==NULL)
     {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d'ouvrir le fichier\n");
     	exit(1);
 	
 	}	
 fas=fopen("fas.txt","wt");
 	if(fas==NULL)
     {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
-    printf("donner le code de la classe a modifier:");
+    printf("Donner le code de la salle à modifier:");
     scanf("%d",&codeR);
     while(fscanf(fps,"%d %s %d %s",&codes,position,&capacite,machine)==4)
     {
     	if(codes==codeR){
 	
     	tr=1;
-    	printf("donner le nouveau position:");
+    	printf("Donner la nouvelle position:");
     	scanf("%s",position);
-    		printf("donner le nouveau capacite:");
-    	scanf("%d",&capacite);
-    		printf("donner le nouveau disponibilite ou non des machines:");
+    	capacite = demanderCapacite();
+    	printf("Donner la nouvelle disponibilite des machines:");
     	scanf("%s",machine);
 		}
 	
@@ -366,9 +403,9 @@ fprintf(fas,"%d\n %s\n %d\n %s\n",codes,position,capacite,machine);
 	remove("salle.txt");
 	rename("fas.txt","salle.txt");
 	if(tr==0)
-	printf("la salle n'existe pas\n");
+	printf("La salle n existe pas\n");
 	else
-	printf("la salle est modifier\n");
+	printf("La salle est modifier\n");
 	
 	
 }
@@ -376,45 +413,38 @@ fprintf(fas,"%d\n %s\n %d\n %s\n",codes,position,capacite,machine);
 
 void supprimersalle()
 {
-int codeR, tr = 0;
-int codes,capacite;
-char position[20],machine[20]; 
-FILE*fas,*fps;
-fps=fopen("salle.txt","rt");
-    if(fps==NULL)
-    {
-    	printf("impossible d'ouvrir le fichier\n");
-    	exit(1);
-	
-	}	
-fas=fopen("fas.txt","wt");
-	if(fas==NULL)
-    {
-    	printf("impossible d'ouvrir le fichier\n");
-    	exit(1);
-	
-	}	
-    printf("donner le code de la salle à supprimer:");
-    scanf("%d",&codeR);
-  while(fscanf(fps,"%d %s %d %s",&codes,position,&capacite,machine)==4)
-    {
-    	if(codes!=codeR)
-	fprintf(fas,"%d\n %s\n %d\n %s\n",codes,position,capacite,machine);
-	    else
-    	tr=1;
+	int codeR, tr = 0;
+	int codes, capacite;
+	char position[20], machine[20];
+	FILE *fas, *fps;
+	fps = fopen("salle.txt", "rt");
+	if (fps == NULL) {
+		printf("Impossible d ouvrir le fichier\n");
+		exit(1);
 	}
-
-
+	fas = fopen("fas.txt", "wt");
+	if (fas == NULL) {
+		printf("Impossible d ouvrir le fichier\n");
+		exit(1);
+	}
+	printf("Donner le code de la salle a supprimer : ");
+	scanf("%d", &codeR);
+	while (fscanf(fps, "%d %s %d %s", &codes, position, &capacite, machine) == 4) {
+		if (codes != codeR)
+			fprintf(fas, "%d\n %s\n %d\n %s\n", codes, position, capacite, machine);
+		else
+			tr = 1;
+	}
 	fclose(fps);
 	fclose(fas);
 	remove("salle.txt");
-	rename("fas.txt","salle.txt");
-	if(tr==0)
-	printf("la salle n'existe pas\n");
-	else
-	printf("la salle est supprimer\n");
-	
-	
+	rename("fas.txt", "salle.txt");
+	if (tr == 0)
+		printf("La salle n existe pas\n");
+	else {
+		printf("La salle est supprimee\n");
+		supprimerReservationsSalle(codeR);
+	}
 }
 void affichageedt()
 {
@@ -423,7 +453,7 @@ void affichageedt()
 	fpe=fopen("edt.txt","rt");
 	if(fpe==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -440,7 +470,7 @@ void affichageedtl1()
 	fpel=fopen("edtl.txt","rt");
 	if(fpel==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -457,7 +487,7 @@ void affichageedtl3bio()
 	fpelll=fopen("edtl3bio.txt","rt");
 	if(fpelll==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -475,7 +505,7 @@ void affichageedtm1sir()
 	fpem1=fopen("edtm1sir.txt","rt");
 	if(fpem1==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -493,7 +523,7 @@ void affichageedtm2retel()
 	fpem2retel=fopen("edtm2retel.txt","rt");
 	if(fpem2retel==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -511,7 +541,7 @@ void affichageedtm1retel()
 	fpem1retel=fopen("edtm1retel.txt","rt");
 	if(fpem1retel==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -529,7 +559,7 @@ void affichageedtm1sirsoir()
 	fpem1s=fopen("edtm1sirsoir.txt","rt");
 	if(fpem1s==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -546,48 +576,168 @@ fclose(fpem1s);
 
 void creationreservation()
 {
-	int numR,tr=0;
-	fpr=fopen("reservation.txt","a+");
-	if(fpr==NULL)
-	{
-		printf("ce n'est pas possible d'ouvrir le fichier\n");
-		exit(1);
-	}
-	printf("donner le numero de reservation:");
-	scanf("%d",&numR);
-	while(!feof(fpr)){
-		fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,&jourReservation,&moisReservation,&anneeReservation,heureDebut,&duree,motif,etat);
-		if(numReservation==numR)
-		{
-			tr=1;
-			break;
-		}
-	}	
-	if(tr==1){
-		printf("reservation existe deja!!!\n");
-	}
-	else{
-		printf("donner le code de la classe:");
-		scanf("%d",&codeClasse);
-		printf("donner le code de la salle:");
-		scanf("%d",&codeSalle);
-		printf("donner le jour (ex: 15):");
-		scanf("%d",&jourReservation);
-		printf("donner le mois (ex: 6):");
-		scanf("%d",&moisReservation);
-		printf("donner l'annee (ex: 2024):");
-		scanf("%d",&anneeReservation);
-		printf("donner l'heure de debut (ex: 08h00):");
-		scanf("%s",heureDebut);
-		printf("donner la duree en heure:");
-		scanf("%d",&duree);
-		printf("donner le motif:");
-		scanf("%s",motif);
-		printf("donner l'etat (reserve/annule/valide/encours/termine):");
-		scanf("%s",etat);
-		fprintf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",numR,codeClasse,codeSalle,jourReservation,moisReservation,anneeReservation,heureDebut,duree,motif,etat);
-	}
-	fclose(fpr);
+    int numR, tr = 0, ok;
+    fpr = fopen("reservation.txt", "a+");
+    if (fpr == NULL)
+    {
+        printf("Impossible d ouvrir le fichier\n");
+        exit(1);
+    }
+    do {
+        printf("Donner le numero de reservation : ");
+        ok = scanf("%d", &numR);
+        if (ok != 1 || numR <= 0) {
+            printf("Erreur : veuillez entrer un nombre entier positif !\n");
+            scanf("%s");
+        }
+    } while (ok != 1 || numR <= 0);
+    
+    rewind(fpr);
+    while (fscanf(fpr, "numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",
+                &numReservation, &codeClasse, &codeSalle, &jourReservation, &moisReservation, &anneeReservation, heureDebut, &duree, motif, etat) == 10) {
+        if (numReservation == numR) {
+            tr = 1;
+            break;
+        }
+    }
+    
+    if (tr == 1) {
+        printf("Reservation existe deja !\n");
+        fclose(fpr);
+        return;
+    }
+
+    
+    do {
+        printf("Donner le code de la classe : ");
+        ok = scanf("%d", &codeClasse);
+        if (ok != 1 || codeClasse <= 0) {
+            printf("Erreur : veuillez entrer un nombre entier positif !\n");
+            scanf("%s");
+        }
+    } while (ok != 1 || codeClasse <= 0);
+
+ 
+    int classeExiste = 0;
+    fp = fopen("classe.txt", "r");
+    if (fp != NULL) {
+        while (fscanf(fp, "%d\n %s\n %s\n %d\n", &code, nom, niveau, &effectif) == 4) {
+            if (code == codeClasse) {
+                classeExiste = 1;
+                break;
+            }
+        }
+        fclose(fp);
+    }
+    if (!classeExiste) {
+        printf("Erreur : la classe n existe pas !\n");
+        fclose(fpr);
+        return;
+    }
+
+   
+    do {
+        printf("Donner le code de la salle : ");
+        ok = scanf("%d", &codeSalle);
+        if (ok != 1 || codeSalle <= 0) {
+            printf("Erreur : veuillez entrer un nombre entier positif !\n");
+            scanf("%s");
+        }
+    } while (ok != 1 || codeSalle <= 0);
+
+   
+    int salleExiste = 0;
+    fpfsalle = fopen("salle.txt", "r");
+    if (fpfsalle != NULL) {
+        while (fscanf(fpfsalle, "%d\n %s\n %d\n %s\n", &codes, position, &capacite, machine) == 4) {
+            if (codes == codeSalle) {
+                salleExiste = 1;
+                break;
+            }
+        }
+        fclose(fpfsalle);
+    }
+    if (!salleExiste) {
+        printf("Erreur : la salle n existe pas !\n");
+        fclose(fpr);
+        return;
+    }
+
+    int jourR, moisR, anneeR;
+    do {
+        printf("Donner le jour (1-31) : ");
+        ok = scanf("%d", &jourR);
+        if (ok != 1 || jourR < 1 || jourR > 31) {
+            printf("Erreur : veuillez entrer un jour entre 1 et 31 !\n");
+            scanf("%s");
+        }
+    } while (ok != 1 || jourR < 1 || jourR > 31);
+
+    do {
+        printf("Donner le mois (1-12) : ");
+        ok = scanf("%d", &moisR);
+        if (ok != 1 || moisR < 1 || moisR > 12) {
+            printf("Erreur : veuillez entrer un mois entre 1 et 12 !\n");
+            scanf("%s");
+        }
+    } while (ok != 1 || moisR < 1 || moisR > 12);
+
+    do {
+        printf("Donner l annee : ");
+        ok = scanf("%d", &anneeR);
+        if (ok != 1 || anneeR <= 0) {
+            printf("Erreur : veuillez entrer une année positive !\n");
+            scanf("%s");
+        }
+    } while (ok != 1 || anneeR <= 0);
+
+    printf("Donner l heure de debut (ex : 08h00) : ");
+    scanf("%s", heureDebut);
+
+    int conflit = 0;
+    char heureTemp[10];
+    strcpy(heureTemp, heureDebut);
+    
+    rewind(fpr);
+    int codeSalleExistant;
+    while (fscanf(fpr, "numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",
+                &numReservation, &codeClasse, &codeSalleExistant, &jourReservation, &moisReservation, &anneeReservation, heureDebut, &duree, motif, etat) == 10) {
+        
+        if (codeSalleExistant == codeSalle && 
+            jourReservation == jourR && 
+            moisReservation == moisR && 
+            anneeReservation == anneeR &&
+            strcmp(heureDebut, heureTemp) == 0 &&
+            strcmp(etat, "annule") != 0 &&
+            strcmp(etat, "termine") != 0) {
+            conflit = 1;
+            break;
+        }
+    }
+    if (conflit) {
+        printf("Erreur : cette salle est deja reservee a ce moment !\n");
+        fclose(fpr);
+        return;
+    }
+
+    do {
+        printf("Donner la duree en heures : ");
+        ok = scanf("%d", &duree);
+        if (ok != 1 || duree <= 0) {
+            printf("Erreur : veuillez entrer un nombre entier positif !\n");
+            scanf("%s");
+        }
+    } while (ok != 1 || duree <= 0);
+
+    printf("Donner le motif : ");
+    scanf("%s", motif);
+    printf("Donner l etat (reserve/annule/valide/en cours/termine) : ");
+    scanf("%s", etat);
+
+    fprintf(fpr, "numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",
+            numR, codeClasse, codeSalle, jourR, moisR, anneeR, heureTemp, duree, motif, etat);
+    
+    fclose(fpr);
 }
 void affichagelistereservation()
 {
@@ -596,7 +746,7 @@ void affichagelistereservation()
 	fpr=fopen("reservation.txt","rt");
 	if(fpr==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d'ouvrir le fichier\n");
     	exit(1);
 	}	
 	while(fscanf(fpr," numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,&jourReservation,&moisReservation,&anneeReservation,heureDebut,&duree,motif,etat) != EOF)
@@ -619,10 +769,10 @@ void affichagereservation()
 	fpr=fopen("reservation.txt","rt");
 	if(fpr==NULL)
 	{
-		printf("impossible d'ouvrir le fichier\n");
+		printf("Impossible d'ouvrir le fichier\n");
 		exit(1);
 	}
-	printf("donner le numero de reservation:");
+	printf("Donner le numero de reservation :");
 	scanf("%d",&numR);
 	while(!feof(fpr))
 	{
@@ -641,7 +791,7 @@ void affichagereservation()
 	}
 	if(tr==0)
 	{
-		printf("la reservation n'existe pas!!!\n");
+		printf("La reservation n existe pas !\n");
 	}
 	fclose(fpr);
 }
@@ -651,10 +801,10 @@ void recherchereservationclasse()
 	fpr=fopen("reservation.txt","rt");
 	if(fpr==NULL)
 	{
-		printf("impossible d'ouvrir le fichier\n");
+		printf("Impossible d'ouvrir le fichier\n");
 		exit(1);
 	}
-	printf("donner le code de la classe:");
+	printf("Donner le code de la classe :");
 	scanf("%d",&codeR);
 	while(fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,&jourReservation,&moisReservation,&anneeReservation,heureDebut,&duree,motif,etat) != EOF)
 	{
@@ -683,10 +833,10 @@ void recherchereservationsalle()
 	fpr=fopen("reservation.txt","rt");
 	if(fpr==NULL)
 	{
-		printf("impossible d'ouvrir le fichier\n");
+		printf("Impossible d'ouvrir le fichier\n");
 		exit(1);
 	}
-	printf("donner le code de la salle:");
+	printf("Donner le code de la salle :");
 	scanf("%d",&codeR);
 	while(fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,&jourReservation,&moisReservation,&anneeReservation,heureDebut,&duree,motif,etat) != EOF)
 	{
@@ -716,23 +866,23 @@ void modifieretatreservation()
 	fpr=fopen("reservation.txt","rt");
 	if(fpr==NULL)
 	{
-		printf("impossible d'ouvrir le fichier\n");
+		printf("Impossible d'ouvrir le fichier\n");
 		exit(1);
 	}
 	fa=fopen("fa.txt","wt");
 	if(fa==NULL)
 	{
-		printf("impossible d'ouvrir le fichier\n");
+		printf("Impossible d'ouvrir le fichier\n");
 		exit(1);
 	}
-	printf("donner le numero de la reservation a modifier:");
+	printf("Donner le numero de la reservation a modifier:");
 	scanf("%d",&numR);
 	while(fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,&jourReservation,&moisReservation,&anneeReservation,heureDebut,&duree,motif,etat) != EOF)
 	{
 		if(numReservation==numR)
 		{
 			tr=1;
-			printf("donner le nouvel etat (reserve/annule/valide/encours/termine):");
+			printf("Donner le nouvel etat (reserve/annule/valide/en cours/termine):");
 			scanf("%s",etat);
 		}
 		fprintf(fa,"numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",numReservation,codeClasse,codeSalle,jourReservation,moisReservation,anneeReservation,heureDebut,duree,motif,etat);
@@ -742,9 +892,9 @@ void modifieretatreservation()
 	remove("reservation.txt");
 	rename("fa.txt","reservation.txt");
 	if(tr==0)
-		printf("la reservation n'existe pas\n");
+		printf("La reservation n existe pas\n");
 	else
-		printf("l'etat de la reservation a ete modifie\n");
+		printf("l etat de la reservation a ete modifie\n");
 }
 
 void supprimerreservation()
@@ -754,16 +904,16 @@ void supprimerreservation()
 	fpr=fopen("reservation.txt","rt");
 	if(fpr==NULL)
 	{
-		printf("impossible d'ouvrir le fichier\n");
+		printf("Impossible d'ouvrir le fichier\n");
 		exit(1);
 	}
 	fa=fopen("fa.txt","wt");
 	if(fa==NULL)
 	{
-		printf("impossible d'ouvrir le fichier\n");
+		printf("Impossible d'ouvrir le fichier\n");
 		exit(1);
 	}
-	printf("donner le numero de la reservation a supprimer:");
+	printf("Donner le numero de la reservation a supprimer:");
 	scanf("%d",&numR);
 	while(fscanf(fpr,"numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",&numReservation,&codeClasse,&codeSalle,&jourReservation,&moisReservation,&anneeReservation,heureDebut,&duree,motif,etat) != EOF)
 	{
@@ -777,7 +927,7 @@ void supprimerreservation()
 	remove("reservation.txt");
 	rename("fa.txt","reservation.txt");
 	if(tr==0)
-		printf("la reservation n'existe pas\n");
+		printf("La reservation n existe pas\n");
 	else
 		printf("la reservation a ete supprimee\n");
 }
@@ -845,7 +995,7 @@ void affichageplanningrc1()
 	fpplanning=fopen("planning rc1.txt","rt");
 	if(fpplanning==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -863,7 +1013,7 @@ void affichageplanningrc2()
 	fpplanning2=fopen("planning rc2.txt","rt");
 	if(fpplanning2==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -881,7 +1031,7 @@ void affichageplanningrc3()
 	fpplanning3=fopen("planning rc3.txt","rt");
 	if(fpplanning3==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -900,7 +1050,7 @@ void affichageplanningrc4()
 	fpplanning4=fopen("planning rc4.txt","rt");
 	if(fpplanning4==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -919,7 +1069,7 @@ void affichageplanningTPE1()
 	fpplanning5=fopen("planning tp E1.txt","rt");
 	if(fpplanning5==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d'ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -937,7 +1087,7 @@ void affichageplanningTPE2()
 	fpplanning6=fopen("planning tp E2.txt","rt");
 	if(fpplanning6==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d'ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -955,7 +1105,7 @@ void affichageplanningTPE3()
 	fpplanning7=fopen("planning tp E3.txt","rt");
 	if(fpplanning7==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d'ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -973,7 +1123,7 @@ void affichageplanningTP_extension()
 	fpplanning8=fopen("planning TP EXTENSION.txt","rt");
 	if(fpplanning8==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d'ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -991,7 +1141,7 @@ void affichageplanningamphi3()
 	fpplanning9=fopen("planning amphi3.txt","rt");
 	if(fpplanning9==NULL)
 	 {
-    	printf("impossible d'ouvrir le fichier\n");
+    	printf("Impossible d'ouvrir le fichier\n");
     	exit(1);
 	
 	}	
@@ -1002,4 +1152,41 @@ void affichageplanningamphi3()
 fclose(fpplanning9);
 
 }
+
+void supprimerReservationsSalle(int codeSalleSupprime) {
+    FILE *fpr = fopen("reservation.txt", "r");
+    FILE *temp = fopen("temp.txt", "w");
+    int numReservation, codeClasse, codeSalle, jour, mois, annee, duree;
+    char heureDebut[10], motif[50], etat[20];
+    while (fscanf(fpr, "numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",
+                  &numReservation, &codeClasse, &codeSalle, &jour, &mois, &annee, heureDebut, &duree, motif, etat) == 10) {
+        if (codeSalle != codeSalleSupprime) {
+            fprintf(temp, "numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",
+                    numReservation, codeClasse, codeSalle, jour, mois, annee, heureDebut, duree, motif, etat);
+        }
+    }
+    fclose(fpr);
+    fclose(temp);
+    remove("reservation.txt");
+    rename("temp.txt", "reservation.txt");
+}
+
+void supprimerReservationsClasse(int codeClasseSupprime) {
+    FILE *fpr = fopen("reservation.txt", "r");
+    FILE *temp = fopen("temp.txt", "w");
+    int numReservation, codeClasse, codeSalle, jour, mois, annee, duree;
+    char heureDebut[10], motif[50], etat[20];
+    while (fscanf(fpr, "numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",
+                  &numReservation, &codeClasse, &codeSalle, &jour, &mois, &annee, heureDebut, &duree, motif, etat) == 10) {
+        if (codeClasse != codeClasseSupprime) {
+            fprintf(temp, "numero reservation:%d\n code classe:%d\n code salle:%d\n jour:%d\n mois:%d\n annee:%d\n heure de debut:%s\n duree:%d\n motif:%s\n etat:%s\n\n",
+                    numReservation, codeClasse, codeSalle, jour, mois, annee, heureDebut, duree, motif, etat);
+        }
+    }
+    fclose(fpr);
+    fclose(temp);
+    remove("reservation.txt");
+    rename("temp.txt", "reservation.txt");
+}
+
 #endif
